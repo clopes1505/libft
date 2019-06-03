@@ -6,11 +6,11 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 10:45:44 by clopes            #+#    #+#             */
-/*   Updated: 2019/05/27 12:06:22 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/03 11:31:05 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str);
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncat.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 14:17:46 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 11:34:32 by clopes           ###   ########.fr       */
+/*   Created: 2019/06/03 11:28:02 by clopes            #+#    #+#             */
+/*   Updated: 2019/06/03 11:49:10 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strncat(char *dst, const char *src, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int		k;
-	size_t	i;
-
-	i = 0;
+	size_t			k;
+	unsigned char	*y;
+	
 	k = 0;
-	k = strlen(dst);
-	while (src[i] && i < n)
+	y = (unsigned char*)s;
+	while(k < n)
 	{
-		dst[k] = src[i];
-		i++;
+		y[k] = '\0';
 		k++;
 	}
-	dst[k] = '\0';
-	return (dst);
 }
