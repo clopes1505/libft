@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   strncpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:55:04 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 13:06:48 by clopes           ###   ########.fr       */
+/*   Created: 2019/05/20 16:16:10 by clopes            #+#    #+#             */
+/*   Updated: 2019/06/03 11:35:31 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strncpy(char * dst, const char * src, size_t len)
+char	*ftstrncpy(char *src, char *dst, size_t len)
 {
-	size_t k;
-
+size_t k;
 	k = 0;
-	while(src[k] && k < len)
+	while(dst[k] && k < len)
 	{
-		dst[k] = src[k];
-	   	k++;
-	}
-	while (k < len)
-	{
-		dst[k] = '\0';
+		dst[k] =  src[k];
 		k++;
-	}
+	}	
+	dst[k] = '\0';			
 	return(dst);
 }

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   strcat.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 13:07:04 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 13:21:26 by clopes           ###   ########.fr       */
+/*   Created: 2019/05/21 13:44:22 by clopes            #+#    #+#             */
+/*   Updated: 2019/05/21 14:16:50 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
-char	*ft_strcat(char *s1, const char *s2)
+char	*ftstrcat(char *dst, const char *src)
 {
-	int i;
 	int k;
-
+	int i;
+	i = 0;
 	k = 0;
-	i = ft_strlen(s1);
-	while (s2[k])
+	while(dst[k])
+		k++;
+	while(src[i])
 	{
-		s1[i + k] = s2[k];
+		dst[k] = src[i];
+		i++;
 		k++;
 	}
-	s1[i + k] = '\0';
-	return(s1);
+	dst[k] = '\0';
+	return(dst);
 }

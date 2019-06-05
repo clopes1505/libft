@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   strdup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 11:04:24 by clopes            #+#    #+#             */
-/*   Updated: 2019/05/21 13:38:38 by clopes           ###   ########.fr       */
+/*   Created: 2019/05/23 13:30:40 by clopes            #+#    #+#             */
+/*   Updated: 2019/05/24 07:29:10 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ftstrcpy(char *src, char *dst)
+
+#include <stdlib.h>
+
+int		ft_strlen(char *str);
+
+char	*ft_strdup(const char *s1)
 {
-	int k;
+	int		k;
+	int		size;
+	char	*dup;
+
 	k = 0;
-	while(dst[k])
+	size = ft_strlen((char *)s1);
+	dup = (char *)malloc(size * sizeof(char));
+	while (s1[k])
 	{
-		dst[k] = src[k];
+		dup[k] = s1[k];
 		k++;
 	}
-	dst[k] = '\0';
-	return(dst);
+	return (dup);
 }
