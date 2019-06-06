@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:17:46 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 11:34:32 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/06 11:06:52 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncat(char *dst, const char *src, size_t n)
 
 	i = 0;
 	k = 0;
-	k = strlen(dst);
+	k = ft_strlen(dst);
 	while (src[i] && i < n)
 	{
 		dst[k] = src[i];
