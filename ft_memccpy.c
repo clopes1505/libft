@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:58:52 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 12:06:57 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/06 13:44:50 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		dst1[k] = src1[k];
 	   	if (src1[k] == c1)
-			return((void *) &dst[k +1]);
+			return((void *) &dst1[k + 1]);
 		k++;
 	}
-	return((void *)dst1);
+	return(NULL);
 }

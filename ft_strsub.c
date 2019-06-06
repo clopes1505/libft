@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 10:45:44 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/06 13:32:47 by clopes           ###   ########.fr       */
+/*   Created: 2019/06/06 15:21:58 by clopes            #+#    #+#             */
+/*   Updated: 2019/06/06 15:38:48 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t  k;
-	size_t	tot;
+	int size;
+	char *s1;
 
-	i = ft_strlen(dst);
-	k = 0;
-	tot = ft_strlen(src);
-	if (i >= dstsize)
-		return (tot + dstsize);
-	while ((i + k) < (dstsize - 1) && src[k])
-	{
-		dst[i + k] = src[k];
-		k++;
-	}
-	dst[i + k] = '\0';
-	return (i + tot);
+	s1 = (char *)s;
+	size = ft_strlen(s1);
+	if (!(s1 = malloc(len)))
+		return(NULL);
+	ft_bzero((void *)s1 + start, len);
+	s1[size] = '\0';
+	return(s1);
 }
