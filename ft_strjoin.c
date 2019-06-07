@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 15:21:58 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/07 08:29:33 by clopes           ###   ########.fr       */
+/*   Created: 2019/06/07 08:04:34 by clopes            #+#    #+#             */
+/*   Updated: 2019/06/07 08:44:43 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
-{
-	size_t k;
-	char *s1;
 
-	s1 = (char *)malloc(sizeof(char) * (len + 1));
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*sfinal;
+	size_t	k;
+	size_t	tot;
+	size_t	i;
+
+	tot = ft_strlen(s1) + ft_strlen(s2);
+	if (!(sfinal = (char *)malloc(sizeof(char) * tot)))
+		return (NULL);
 	k = 0;
-	if (s == NULL || start > ft_strlen(s) || s1 == NULL)
-		return (0);
-	while (k < len && s[start + k])
+	i = 0;
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	while (s1[k])
 	{
-		s1[k] = s[start + k];
+		sfinal[k] = s1[k];
 		k++;
 	}
-	s1[k] = '\0';
-	return(s1);
+	while (s2[i])
+	{
+		sfinal[k + i] = s2[i];
+		i++;
+	}
+	sfinal[k + i] = '\0';
+	return (sfinal);
 }
