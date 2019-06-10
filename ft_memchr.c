@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 12:17:32 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 12:28:42 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/08 15:10:36 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	s1 = (unsigned char *)s;
 	c1 = c;
-	if (s1 == NULL)
-		return(NULL);
 	k = 0;
 	while(k < n)
 	{
