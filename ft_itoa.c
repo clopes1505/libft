@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 11:28:02 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/14 09:12:07 by clopes           ###   ########.fr       */
+/*   Created: 2019/06/13 15:41:08 by clopes            #+#    #+#             */
+/*   Updated: 2019/06/14 14:50:09 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void	ft_bzero(void *s, size_t n)
+
+static int	ft_numlen (long n)
 {
-	size_t			k;
-	unsigned char	*y;
-	
+
+	int k;
+
 	k = 0;
-	y = (unsigned char*)s;
-	while(k < n)
+	if (n < 0)
 	{
-		y[k] = '\0';
+		n *= -1;
 		k++;
 	}
+	while (n >= 1)
+	{
+		n /= 10;
+		k++;
+	}
+	return (k);
+}
+
+char		*ft_itoa(int n)
+{
+	char	*num;
+	int		i;
+
+	i = 0;
+	if(!(num = malloc(sizeof(char) * ft_numlen(n) + 1)))
+		return (NULL);
+	
 }

@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:46:56 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 15:55:44 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/15 01:46:29 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 int		ft_isalnum(int c)
 {
-	if (c >= 48 && c <= 57)	
-		return(1);
-	if (c >= 65 && c <= 90)	
-		return(1);
-	if (c >= 97 && c <= 122)	
-		return(1);
-	return(0);
+	return (ft_isdigit(c) || ft_isalpha(c));
 }
