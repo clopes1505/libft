@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/21 10:19:00 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/21 10:35:03 by clopes           ###   ########.fr       */
+/*   Created: 2019/06/21 14:26:47 by clopes            #+#    #+#             */
+/*   Updated: 2019/06/21 14:37:46 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
-		ft_putstr("-2147483648");
+		write(fd, "-2147483648", 11);
 	else
 	{
 		if (n < 0)
 		{
-			ft_putchar('-');
+			ft_putchar_fd('-', fd);
         	n *= -1;
 		}
+		if (n < 10)
+			ft_putchar_fd((n + '0'), fd);
 		if (n > 10)
 		{
-			ft_putnbr(n / 10);
-			ft_putnbr(n %= 10);
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n %= 10, fd);
 		}
-		else
-			ft_putchar(n += '0');
 	}
-}
-int		main()
-{
-	ft_putnbr(-58000005);
 }
