@@ -6,19 +6,22 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 11:04:24 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/06 08:13:53 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 11:48:55 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 char	*ft_strcpy(char *dst, char *src)
 {
 	int k;
-	k = 0;
 
-	while(src[k])
+	k = 0;
+	while (src[k])
 	{
 		dst[k] = src[k];
 		k++;
 	}
 	dst[k] = '\0';
-	return(dst);
+	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 08:55:42 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/06 08:59:21 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 11:59:24 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int 	k;
-	char 	*str;
+	int		k;
+	char	*str;
 	int		len;
 
 	len = ft_strlen(s);

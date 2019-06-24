@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 10:19:00 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/21 10:35:03 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 11:26:43 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr(int n)
 		if (n < 0)
 		{
 			ft_putchar('-');
-        	n *= -1;
+			n *= -1;
 		}
 		if (n > 10)
 		{
@@ -31,8 +31,4 @@ void	ft_putnbr(int n)
 		else
 			ft_putchar(n += '0');
 	}
-}
-int		main()
-{
-	ft_putnbr(-58000005);
 }

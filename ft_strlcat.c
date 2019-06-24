@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 10:45:44 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/06 13:32:47 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 11:55:08 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t  k;
+	size_t	k;
 	size_t	tot;
 
 	i = ft_strlen(dst);

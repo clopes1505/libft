@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 15:52:23 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/06 08:55:33 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 11:56:09 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int 	k;
-	char 	*str;
+	int		k;
+	char	*str;
 	int		len;
 
 	len = ft_strlen(s);
@@ -28,7 +28,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	{
 		str[k] = f(s[k]);
 		k++;
-	}		
+	}
 	str[k] = '\0';
 	return (str);
 }

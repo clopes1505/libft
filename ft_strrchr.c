@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:42:24 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/03 13:47:41 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 12:05:33 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	k = ft_strlen(s);
 	pos = NULL;
-	while (k >= 0) 
+	while (k >= 0)
 	{
 		if ((unsigned char)s[k] == c)
 		{

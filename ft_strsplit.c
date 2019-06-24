@@ -6,13 +6,12 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:29:00 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/18 14:18:03 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 12:20:39 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-// count words in str delimited by c
+
 static int	ft_wordlen(char *s, char c)
 {
 	int i;
@@ -29,6 +28,7 @@ static int	ft_wordlen(char *s, char c)
 	}
 	return (i);
 }
+
 static int	ft_wordcount(char *s, char c)
 {
 	int k;
@@ -51,8 +51,8 @@ static int	ft_wordcount(char *s, char c)
 	}
 	return (i);
 }
-//maloc for word count and strlen
-char	**ft_strsplit(char const *s, char c)
+
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**arr;
 	int		x;
@@ -64,15 +64,14 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(arr = malloc(sizeof(*arr) * (ft_wordcount((char *)s, c) + 1))))
-		return(NULL);
+	if (!(arr = malloc(sizeof(char *) * (ft_wordcount((char *)s, c) + 1))))
+		return (NULL);
 	while (s[k] != '\0')
 	{
-		while (s[k] == c)
+		while (s[k] == c && s[k] != '\0')
 			k++;
 		i = ft_wordlen(((char *)s) + k, c);
-		arr[x] = ft_strsub(s + k, 0, i);
-		arr[x][i + 1] = '\0';
+		arr[x] = ft_strsub(s, k, i);
 		k += i;
 		x++;
 	}

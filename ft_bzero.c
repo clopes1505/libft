@@ -6,19 +6,20 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:28:02 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/14 09:12:07 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 10:49:18 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			k;
 	unsigned char	*y;
-	
+
 	k = 0;
 	y = (unsigned char*)s;
-	while(k < n)
+	while (k < n)
 	{
 		y[k] = '\0';
 		k++;

@@ -6,15 +6,16 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:21:58 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/07 08:29:33 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 12:22:50 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t k;
-	char *s1;
+	size_t	k;
+	char	*s1;
 
 	s1 = (char *)malloc(sizeof(char) * (len + 1));
 	k = 0;
@@ -26,5 +27,5 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		k++;
 	}
 	s1[k] = '\0';
-	return(s1);
+	return (s1);
 }

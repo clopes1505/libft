@@ -6,13 +6,13 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 10:08:26 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/05 11:49:50 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/24 12:04:06 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strnew(size_t size)
-{	
-	return((char *)ft_memalloc(size +1));	
+{
+	return ((char *)ft_memalloc(size + 1));
 }
