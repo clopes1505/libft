@@ -6,13 +6,13 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:29:00 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/24 12:20:39 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/26 15:50:06 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_wordlen(char *s, char c)
+#include <stdio.h>
+static int	ft_wordlen(char const *s, char c)
 {
 	int i;
 	int k;
@@ -29,25 +29,19 @@ static int	ft_wordlen(char *s, char c)
 	return (i);
 }
 
-static int	ft_wordcount(char *s, char c)
+static int	ft_wordcount(char const *s, char c)
 {
-	int k;
-	int wordcount;
-	int i;
+	unsigned int i;
 
-	wordcount = 0;
 	i = 0;
-	k = 0;
-	while (s[k])
+	while (*s)
 	{
-		if (s[k] == c && wordcount == 1)
-			wordcount = 0;
-		if (s[k] != c && wordcount == 0)
-		{
-			wordcount = 1;
+		while (*s == c)
+			s++;
+		if (*s)
 			i++;
-		}
-		k++;
+		while (*s != c && *s)
+			s++;
 	}
 	return (i);
 }
@@ -64,16 +58,40 @@ char		**ft_strsplit(char const *s, char c)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(arr = malloc(sizeof(char *) * (ft_wordcount((char *)s, c) + 1))))
+	if (!(arr = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
 		return (NULL);
-	while (s[k] != '\0')
+	while (x < ft_wordcount(s, c))
 	{
 		while (s[k] == c && s[k] != '\0')
 			k++;
-		i = ft_wordlen(((char *)s) + k, c);
+
+		i = ft_wordlen(s + k, c);
 		arr[x] = ft_strsub(s, k, i);
+	//	printf("store : %s\n", ft_strsub(s,k,i));
 		k += i;
 		x++;
 	}
+	arr[x] = NULL;
 	return (arr);
 }
+
+/*int main()
+{
+	char **str;
+	char *arr = "   lorem   ipsum dolor    sit  amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
+	int i;
+	char *c;
+	//char *res = "iolstr";
+
+	str = ft_strsplit(arr, ' ');
+	i = 0;
+	//c = ft_strdup(str[0]);
+	while (i < ft_wordcount(arr, ' '))
+	{
+		ft_putstr(str[i]);
+		//c = ft_strjoin(c, str[i]);
+		i++;
+	}
+	//if(!(strcmp(c, res)))
+		//ft_putstr("pass");
+}*/

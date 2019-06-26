@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:21:58 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/24 12:22:50 by clopes           ###   ########.fr       */
+/*   Updated: 2019/06/25 10:07:00 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	k = 0;
 	if (s == NULL || start > ft_strlen(s) || s1 == NULL)
 		return (0);
-	while (k < len && s[start + k])
+	while (k < len && s[start + k] && s[k] != '\0')
 	{
 		s1[k] = s[start + k];
 		k++;
