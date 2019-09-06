@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:46:13 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/05 15:35:56 by clopes           ###   ########.fr       */
+/*   Updated: 2019/07/02 07:33:07 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ void	ft_striter(char *s, void (*f)(char *))
 	int k;
 
 	k = 0;
-	if (s)
+	if (s == NULL || f == NULL)
+		return ((void)NULL);
+	while (s[k])
 	{
-		while (s[k])
-		{
-			f(&s[k]);
-			k++;
-		}
+		f(&s[k]);
+		k++;
 	}
 }

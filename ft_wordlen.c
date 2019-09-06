@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_wordlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:07:08 by clopes            #+#    #+#             */
-/*   Updated: 2019/07/05 10:55:20 by clopes           ###   ########.fr       */
+/*   Created: 2019/07/02 07:39:20 by clopes            #+#    #+#             */
+/*   Updated: 2019/07/02 07:44:44 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_wordlen(char const *s, char c)
 {
-	size_t k;
+	int i;
+	int k;
 
 	k = 0;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst <= src)
+	i = 0;
+	while (s[k] == c)
+		k++;
+	while (s[k] != c && s[k] != '\0')
 	{
-		k = 0;
-		while (k < len)
-		{
-			((unsigned char *)dst)[k] = ((unsigned char *)src)[k];
-			k++;
-		}
+		i++;
+		k++;
 	}
-	else
-	{
-		k = len;
-		while (k > 0)
-		{
-			((unsigned char *)dst)[k - 1] = ((unsigned char *)src)[k - 1];
-			k--;
-		}
-	}
-	return (dst);
+	return (i);
 }

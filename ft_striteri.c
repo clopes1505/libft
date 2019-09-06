@@ -6,7 +6,7 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 15:37:10 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/05 15:39:56 by clopes           ###   ########.fr       */
+/*   Updated: 2019/07/01 16:04:41 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int k;
 
 	k = 0;
-	if (s)
+	if (s == NULL || f == NULL)
+		return ((void)NULL);
+	while (s[k])
 	{
-		while (s[k])
-		{
-			f(k, &s[k]);
-			k++;
-		}
+		f(k, &s[k]);
+		k++;
 	}
 }

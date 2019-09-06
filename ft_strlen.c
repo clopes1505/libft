@@ -6,15 +6,19 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:07:53 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/24 11:54:27 by clopes           ###   ########.fr       */
+/*   Updated: 2019/07/24 11:43:40 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include "libft.h"
+
+size_t		ft_strlen(const char *str)
 {
-	int k;
+	size_t k;
 
 	k = 0;
+	if (str == NULL)
+		return (0);
 	while (str[k])
 		k++;
 	return (k);

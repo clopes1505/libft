@@ -6,32 +6,11 @@
 /*   By: clopes <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 15:41:08 by clopes            #+#    #+#             */
-/*   Updated: 2019/06/18 16:38:11 by clopes           ###   ########.fr       */
+/*   Updated: 2019/07/02 07:36:46 by clopes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-static int		ft_numlen(long n)
-{
-	int k;
-
-	k = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		k++;
-		n *= -1;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		k++;
-	}
-	return (k);
-}
 
 char			*ft_itoa(int n)
 {
